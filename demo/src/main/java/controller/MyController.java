@@ -35,4 +35,9 @@ public class MyController {
     public String updateCourseDetails(@RequestBody Course courseDetails,@PathVariable String courseID){
         return courseService.updateCourseDetails(courseDetails,Integer.parseInt(courseID));
     }
+
+    @DeleteMapping("/delete/course/{courseID}")
+    public String deleteCourseDetails(@PathVariable String courseID){
+        return courseService.deleteCourseDetails(Integer.parseInt(courseID));
+    }
 }

@@ -51,4 +51,16 @@ public class CourseServiceImplementation implements CourseService{
         }
         return "Course details were updated successfully!";
     }
+
+    @Override
+    public String deleteCourseDetails(int courseID) {
+        for(Course currentCourse : list){
+            if(currentCourse.getID()==courseID){
+                list.remove(currentCourse);
+                break;
+            }
+        }
+        return "Course was deleted successfully!";
+
+    }
 }

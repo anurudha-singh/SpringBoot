@@ -10,4 +10,6 @@ public interface CourseService {
     String addCourse(Course course);
 
     String updateCourseDetails(Course course, int courseID);
+
+    String deleteCourseDetails(int i);
 }
