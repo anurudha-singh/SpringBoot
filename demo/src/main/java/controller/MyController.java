@@ -2,10 +2,7 @@ package controller;
 
 import entities.Course;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 import services.CourseService;
 
 import java.util.List;
@@ -27,5 +24,11 @@ public class MyController {
     @GetMapping("/course/{courseID}")
     public Course getCourse(@PathVariable String courseID ){
         return this.courseService.getCourse(Integer.parseInt(courseID));
+    }
+    @PostMapping("/addCourse")
+    public String addCourse(@RequestBody Course course){
+//        System.out.println("Course added!");
+       return courseService.addCourse(course);
+
     }
 }

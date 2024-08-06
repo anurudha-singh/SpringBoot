@@ -6,4 +6,6 @@ public interface CourseService {
     public List<Course> getCourses();
 
     Course getCourse(int courseId);
+
+    String addCourse(Course course);
 }

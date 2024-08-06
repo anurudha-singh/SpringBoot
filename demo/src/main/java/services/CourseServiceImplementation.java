@@ -33,4 +33,10 @@ public class CourseServiceImplementation implements CourseService{
         }
         return requestedCourse;
     }
+
+    @Override
+    public String addCourse(Course course){
+        list.add(course);
+        return "Course was added successfully";
+    }
 }
