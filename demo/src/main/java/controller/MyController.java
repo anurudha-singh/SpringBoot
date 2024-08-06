@@ -31,4 +31,8 @@ public class MyController {
        return courseService.addCourse(course);
 
     }
+    @PutMapping("/update/course/{courseID}")
+    public String updateCourseDetails(@RequestBody Course courseDetails,@PathVariable String courseID){
+        return courseService.updateCourseDetails(courseDetails,Integer.parseInt(courseID));
+    }
 }

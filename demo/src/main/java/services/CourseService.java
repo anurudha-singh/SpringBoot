@@ -8,4 +8,6 @@ public interface CourseService {
     Course getCourse(int courseId);
 
     String addCourse(Course course);
+
+    String updateCourseDetails(Course course, int courseID);
 }

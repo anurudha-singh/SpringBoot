@@ -39,4 +39,16 @@ public class CourseServiceImplementation implements CourseService{
         list.add(course);
         return "Course was added successfully";
     }
+
+    @Override
+    public String updateCourseDetails(Course course, int courseID) {
+        for(Course currentCourse : list){
+            if(currentCourse.getID()==courseID){
+                currentCourse.setTitle(course.getTitle());
+                currentCourse.setDescription(course.getDescription());
+                break;
+            }
+        }
+        return "Course details were updated successfully!";
+    }
 }
