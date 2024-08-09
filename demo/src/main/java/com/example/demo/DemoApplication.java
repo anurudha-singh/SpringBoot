@@ -6,8 +6,10 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
-@SpringBootApplication(scanBasePackages = { "entities","services","controller" })
-//@ComponentScan(basePackages = {"controller"})
+@SpringBootApplication(
+		scanBasePackages = { "entities","services","controller" })
+
+//@ComponentScan(basePackages = { "dao"})
 //Inclusion of packages so that Spring boot will know what are the other packages that it needs to take care of
 
 public class DemoApplication {
