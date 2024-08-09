@@ -2,6 +2,8 @@ package controller;
 
 import entities.Course;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 import services.CourseService;
 
@@ -33,7 +35,14 @@ public class MyController {
     }
     @PutMapping("/update/course/{courseID}")
     public String updateCourseDetails(@RequestBody Course courseDetails,@PathVariable String courseID){
-        return courseService.updateCourseDetails(courseDetails,Integer.parseInt(courseID));
+        try {
+            courseService.updateCourseDetails(courseDetails,Integer.parseInt(courseID));
+            return String.valueOf(new ResponseEntity<>(HttpStatus.OK));
+        } catch (NumberFormatException e) {
+            return String.valueOf(new ResponseEntity<>(HttpStatus.INTERNAL_SERVER_ERROR));
+        } catch (Exception e) {
+            throw new RuntimeException(e);
+        }
     }
 
     @DeleteMapping("/delete/course/{courseID}")

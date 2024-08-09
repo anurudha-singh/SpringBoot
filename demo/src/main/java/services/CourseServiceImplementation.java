@@ -48,8 +48,10 @@ public class CourseServiceImplementation implements CourseService{
                 currentCourse.setDescription(course.getDescription());
                 break;
             }
+            return "Course details were updated successfully!";
         }
-        return "Course details were updated successfully!";
+        return  new Exception().toString();
+
     }
 
     @Override

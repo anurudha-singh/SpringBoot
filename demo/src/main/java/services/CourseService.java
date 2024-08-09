@@ -9,7 +9,7 @@ public interface CourseService {
 
     String addCourse(Course course);
 
-    String updateCourseDetails(Course course, int courseID);
+    String updateCourseDetails(Course course, int courseID) throws Exception;
 
     String deleteCourseDetails(int i);
 }
